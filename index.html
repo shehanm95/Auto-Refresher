@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Open Link</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="mb-3">Auto Open Link</h1>
+        <label for="urlInput">URL:</label>
+        <input type="text" id="urlInput" class="form-control" placeholder="Enter URL">
+        <label for="minTime">Min Time (minutes):</label>
+        <input type="number" id="minTime" class="form-control" min="1" placeholder="Min">
+        <label for="maxTime">Max Time (minutes):</label>
+        <input type="number" id="maxTime" class="form-control" min="1" placeholder="Max">
+        <div class="button-panel">
+
+            <button class="button-panel button" onclick="saveSettings()">Save Details</button>
+            <button id="pauseButton" class="button-panel button" onclick="togglePause()">Pause</button>
+        </div>
+        <h2 class="mt-3">Next link will open in: <span id="countdown">Loading...</span></h2>
+
+        <h2 class="mt-4">Search</h2>
+        <input type="text" id="Search" class="form-control" placeholder="Search Here">
+        <div class="inline-buttons">
+            <button onclick="searchGoogle()">Search Google</button>
+            <button onclick="searchYouTube()">Search YouTube</button>
+        </div>
+        <h2 class="mt-4">Quick Links</h2>
+        <input type="text" id="quickLinkTitle" class="form-control" placeholder="Enter link title">
+        <input type="text" id="quickLink" class="form-control mt-2" placeholder="Enter quick link">
+        <div class="inline-buttons">
+            <button onclick="saveQuickLink()">Save</button>
+        </div>
+        <div id="quickLinksContainer" class="quick-links mt-3"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
