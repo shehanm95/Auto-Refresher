@@ -4,7 +4,9 @@ let countdown;
 let isPaused = false;
 
 function getRandomInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min) * 60000;
+    let minutes = Math.floor(Math.random() * (max - min + 1) + min) * 60000;
+    let secs = getRandomNumber();
+    return minutes + secs;
 }
 
 function startTimer(url, minTime, maxTime) {
@@ -18,6 +20,7 @@ function startTimer(url, minTime, maxTime) {
     timer = setInterval(function () {
         if (!isPaused) {
             window.open(url, '_blank');
+             location.reload();
             nextInterval = getRandomInterval(minTime, maxTime);
             updateCountdown(nextInterval);
         }
