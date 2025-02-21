@@ -23,9 +23,13 @@ function startTimer(url, minTime, maxTime) {
         }
     }, nextInterval);
 }
+function getRandomNumber() {
+    return Math.floor(Math.random() * (55 - 3 + 1)) + 3;
+}
 
 function updateCountdown(interval) {
     let timeLeft = interval / 1000;
+    timeLeft += getRandomNumber();
     document.getElementById('countdown').innerText = formatTime(timeLeft);
     document.getElementById('countdown').style.border = "none";
 
