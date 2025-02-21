@@ -33,7 +33,7 @@ function updateCountdown(interval) {
         if (!isPaused) {
             timeLeft--;
             document.getElementById('countdown').innerText = formatTime(timeLeft);
-            if (timeLeft <= 0) clearInterval(countdown);
+            if (timeLeft <= 0) location.reload();
         }
     }, 1000);
 }
