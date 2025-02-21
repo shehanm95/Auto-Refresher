@@ -6,7 +6,7 @@ let isPaused = false;
 function getRandomInterval(min, max) {
     let minutes = Math.floor(Math.random() * (max - min + 1) + min) * 60000;
     let secs = getRandomNumber();
-    return minutes + secs;
+    return Math.floor(minutes + secs);
 }
 
 function startTimer(url, minTime, maxTime) {
